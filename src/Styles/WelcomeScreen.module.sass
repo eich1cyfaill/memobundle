@@ -1,0 +1,178 @@
+@import "./StyleAssets/variables.sass"
+
+$bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC"
+$bg-width: 50px
+$bg-height: 50px
+
+@-webkit-keyframes bg-scrolling-reverse
+    100%
+        background-position: $bg-width $bg-height
+
+@-moz-keyframes    bg-scrolling-reverse
+    100%
+        background-position: $bg-width $bg-height
+
+@-o-keyframes      bg-scrolling-reverse
+    100%
+        background-position: $bg-width $bg-height
+
+@keyframes         bg-scrolling-reverse
+    100%
+        background-position: $bg-width $bg-height
+
+@-webkit-keyframes bg-scrolling
+    0%
+        background-position: $bg-width $bg-height
+
+@-moz-keyframes    bg-scrolling
+    0%
+        background-position: $bg-width $bg-height
+
+@-o-keyframes      bg-scrolling
+    0%
+        background-position: $bg-width $bg-height
+
+@keyframes         bg-scrolling
+    0%
+        background-position: $bg-width $bg-height
+
+
+body
+    /* img size is 50x50 */
+    background: url($bg-url) repeat 0 0
+    -webkit-animation: bg-scrolling-reverse 1.50s infinite
+    -moz-animation:    bg-scrolling-reverse 1.50s infinite
+    -o-animation:      bg-scrolling-reverse 1.50s infinite
+    animation:         bg-scrolling-reverse 1.50s infinite
+    -webkit-animation-timing-function: linear
+    -moz-animation-timing-function:    linear
+    -o-animation-timing-function:      linear
+    animation-timing-function:         linear
+
+.welcomeScreen
+    position: relative
+    width: 100vw
+    background: transparent
+    z-index: 1
+
+.block1
+    position: absolute
+    background: $mainAppGreen
+    border-radius: 5px
+    width: 500px
+    height: 40vh
+    z-index: -1
+    top: 15%
+    left: 49%
+    border-top: 3px solid $appGreenGradation4
+    border-bottom: 3px solid $greenToWhite3
+.block2
+    position: absolute
+    border-radius: 5px
+    background: $mainAppGreen
+    width: 700px
+    height: 30vh
+    z-index: -1
+    top: 50%
+    left: 20%
+    border-bottom: 3px solid $appGreenGradation4
+
+main
+    height: 100vh
+    display: grid
+    grid-template-rows: 20fr 30fr 10fr 40fr
+
+.titlesWrapper
+    color: black
+    &__welcome
+        font-size: 55px
+        font-weight: 300
+        margin-left: 35px
+        letter-spacing: 5px
+        span
+            height: fit-content
+            width: fit-content
+
+    &__memobundle
+        font-size: 6rem
+        letter-spacing: 15px
+        font-weight: 300
+        display: flex
+        justify-content: center
+        color: black
+        margin-left: 25px
+    &__desc
+        font-size: 55px
+        font-weight: 300
+        margin-left: 55px
+        letter-spacing: 5px
+    &__start
+        display: flex
+        justify-content: end
+        align-items: center
+        position: relative
+        button
+            position: absolute
+            background: $mainAppGreen
+            outline: none
+            border: none
+            color: white
+            padding: 10px 100px
+            font-size: 25px
+            letter-spacing: 7px
+            font-weight: 300
+            transition-duration: 0.3s
+            z-index: 55
+            &:hover
+                background: #02904b
+                border-right: 5px solid $appGreenGradation4
+                box-sizing: border-box
+                transition-duration: 0.3s
+                cursor: pointer
+
+@media screen and (min-width: 768px)
+    .titlesWrapper
+        button
+            right: 15%
+@media screen and (max-width: 768px)
+    .titlesWrapper
+        &__welcome
+            span
+                background: none
+    .block1
+        top: 0
+        left: 0
+        width: 100%
+    .block2
+        bottom: 0
+        left: 0
+        width: 100vw
+        top: 90%
+
+@media screen and (max-width: 425px)
+    .block1
+        height: 10vh
+    .block2
+        height: 10vh
+    .titlesWrapper
+        &__welcome
+            font-size: 20px
+        &__memobundle
+            font-size: 45px
+            margin-left: 0px
+        &__desc
+            font-size: 20px
+        &__start
+            justify-content: center
+        button
+            font-size: 20px
+            white-space: nowrap
+    .block1
+        width: 100vw
+    .block2
+        bottom: 0
+
+@media screen and (max-width: 375px)
+    .titlesWrapper
+        &__memobundle
+            font-size: 20px
