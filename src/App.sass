@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap')
 .App
   display: grid
   grid-template-columns: 20fr 80fr
+  font-family: 'Nunito', sans-serif
+
+@media screen and (max-width: 425px)
+  .App
+    grid-template-rows: 10fr 90fr
+    grid-template-columns: 100fr

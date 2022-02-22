@@ -11,11 +11,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2f9ad03-52d1-4ba2-8be5-f6c21f182900" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Navside/Navside.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/Navside.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/DeskList/Desklist.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Review/Review.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Hooks/useActions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Hooks/useTypedSelector.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Libs/debounce.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Libs/throttling.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Store/ActionCreators/CardsReducerAC.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Store/Reducers/CardsReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Store/Reducers/ReviewReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Store/Reducers/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Store/indexStore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Styles/Desklist.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Styles/Review.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Types/CardsReducerTypes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Types/ReviewReducerTypes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Navside/Navside.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navside/Navside.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Styles/Navside.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/Styles/Navside.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +44,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -33,7 +52,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="25HbS9LziU0PnPL46Mod88vUffc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,7 +69,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="D:\PetPS\memobundle\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -61,7 +82,12 @@
       <updated>1645186957739</updated>
       <workItem from="1645186958852" duration="9206000" />
       <workItem from="1645241134513" duration="105000" />
-      <workItem from="1645241259401" duration="5349000" />
+      <workItem from="1645241259401" duration="10844000" />
+      <workItem from="1645354668121" duration="1659000" />
+      <workItem from="1645359360172" duration="7166000" />
+      <workItem from="1645373036807" duration="596000" />
+      <workItem from="1645442814423" duration="10222000" />
+      <workItem from="1645528415141" duration="9376000" />
     </task>
     <servers />
   </component>
@@ -89,6 +115,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="260" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645236310389" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1645536819538">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1645536819538" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1645238147435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
