@@ -4,7 +4,7 @@ import {useTypedSelector} from "../../Hooks/useTypedSelector";
 
 
 const Review = () => {
-    const {desks} = useTypedSelector(state => state.cardsReducer)
+    const {desks, customDesks} = useTypedSelector(state => state.cardsReducer)
 
 
 
@@ -32,6 +32,17 @@ const Review = () => {
             <div className={cl.reviewWrapper__basicWrapper}>
                 <div className={cl.reviewWrapper__basicWrapper_title}>custom</div>
                 <div className={cl.reviewWrapper__deskWrapper}>
+                    {customDesks.map((desk) =>
+                        <div className={cl.desk} key={desk.name+desk.toReview+desk.id}>
+                            <div className={cl.desk__toReview}>{desk.toReview}</div>
+                            <div className={cl.desk__titleInfo}>
+                                <div className={cl.desk__title}>{desk.name}</div>
+                                <div className={cl.desk__description}>{desk.description}</div>
+                            </div>
+                            <div className={cl.desk__edit}>E</div>
+                            <div className={cl.desk__delete}>D</div>
+                        </div>
+                    )}
                 </div>
 
             </div>
