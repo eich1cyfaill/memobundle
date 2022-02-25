@@ -19,3 +19,26 @@
     padding: 10px 50px
     letter-spacing: 2px
     margin: 0 auto
+  &__allDeskWrapper
+    display: grid
+    margin-top: 25px
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    column-gap: 2vw
+    row-gap: 2vh
+  &__item
+    border: 2px solid $mainAppGreen
+    background: $greenToWhite8
+    padding: 10px 15px
+    font-weight: 600
+    &:hover
+      background: $greenToWhite7
+
+@media screen and (max-width: 425px)
+  .desklistWrapper
+    &__createNewDesk
+      font-size: 15px
+      width: 50%
+      margin-top: 30px
+    &__allDeskWrapper
+      display: grid
+      grid-template-columns: 100fr

@@ -10,7 +10,7 @@ const Desklist: React.FC = () => {
     const {desks, customDesks} = useTypedSelector(state => state.cardsReducer)
     const allDesks = [...desks, ...customDesks].sort((a: any, b: any) => a.name.localeCompare(b.name))
 
-    const {cardsReducerSetNewDeskAC} = useActions()
+
 
     const toggleNewDeskModal = () => {
         setNewDeskModal(!newDeskModal)
@@ -25,8 +25,8 @@ const Desklist: React.FC = () => {
             <div className={cl.desklistWrapper__createNewDesk} onClick={toggleNewDeskModal}>+ create new desk</div>
             <div className={cl.desklistWrapper__allDeskWrapper}>
                 {allDesks.map(el =>
-                    <div key={el.name + el.id + el.toReview}>
-                        {el.name}
+                    <div className={cl.desklistWrapper__item} key={el.name + el.id + el.toReview}>
+                        {el.name.slice(0, 20)}
                     </div>
                 )}
             </div>

@@ -18,8 +18,8 @@ const Review = () => {
                         <div className={cl.desk} key={desk.name+desk.toReview+desk.id}>
                             <div className={cl.desk__toReview}>{desk.toReview}</div>
                             <div className={cl.desk__titleInfo}>
-                                <div className={cl.desk__title}>{desk.name}</div>
-                                <div className={cl.desk__description}>{desk.description}</div>
+                                <div className={cl.desk__title}>{desk.name.slice(0, 20)}</div>
+                                <div className={cl.desk__description}>{desk.description?.slice(0, 20)}</div>
                             </div>
                             <div className={cl.desk__edit}>E</div>
                             <div className={cl.desk__delete}>D</div>
@@ -36,8 +36,8 @@ const Review = () => {
                         <div className={cl.desk} key={desk.name+desk.toReview+desk.id}>
                             <div className={cl.desk__toReview}>{desk.toReview}</div>
                             <div className={cl.desk__titleInfo}>
-                                <div className={cl.desk__title}>{desk.name}</div>
-                                <div className={cl.desk__description}>{desk.description}</div>
+                                <div className={cl.desk__title}>{desk.name.slice(0, 20)}</div>
+                                <div className={cl.desk__description}>{desk.description?.slice(0, 20)}</div>
                             </div>
                             <div className={cl.desk__edit}>E</div>
                             <div className={cl.desk__delete}>D</div>

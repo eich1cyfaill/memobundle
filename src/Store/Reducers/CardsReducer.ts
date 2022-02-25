@@ -48,8 +48,16 @@ const initialState: ICardsReducerIniState = {
 
 const cardsReducer = (state = initialState, action: any) => {
     switch(action.type){
+        case CardsReducerActionTypes.GET_CUSTOM_DESK:
+            let customs = localStorage.getItem('customDesks')
+            if(customs){
+                customs = JSON.parse(customs)
+                // @ts-ignore
+                return {...state, customDesks: [...customs]}
+            }
+            return state
         case CardsReducerActionTypes.SET_NEW_DESK:
-            localStorage.setItem('customDesks', `${[...state.customDesks]}`)
+            localStorage.setItem('customDesks', JSON.stringify([...state.customDesks, action.payload]))
             return {...state, customDesks: [...state.customDesks, action.payload]}
         default:
             return state

@@ -15,7 +15,8 @@ const Navside = () => {
         if(mobileWidth == false && titleRef.current){
             titleRef.current.removeEventListener('click', toggleNavside)
         }
-        if(window.innerWidth > 425){
+        if(window.screen.width > 425){
+
             setNavsideToggle(true)
         }
 
@@ -27,13 +28,13 @@ const Navside = () => {
     }, [mobileWidth])
 
     useEffect(() => {
-        if((window.innerWidth <= 425) && titleRef.current){
+        if((window.screen.width <= 425) && titleRef.current){
             titleRef.current.addEventListener('click', toggleNavside)
         }
     }, [])
 
     const toggleNavside = () => {
-        if(window.innerWidth <= 425){
+        if(window.screen.width <= 425){
             setNavsideToggle(prev => !prev)
         }
     }
@@ -41,7 +42,7 @@ const Navside = () => {
 
     const setMobileListeners: any = () => {
 
-        if(window.innerWidth < 425 || window.innerWidth == 425){
+        if(window.screen.width <= 425){
             if(titleRef.current){
                 setMobileWidth(true)
             }

@@ -1,5 +1,6 @@
 export enum CardsReducerActionTypes {
     SET_NEW_DESK = "SET_NEW_DESK",
+    GET_CUSTOM_DESK = "GET_CUSTOM_DESK"
 }
 
 interface cardInDesk {
@@ -12,9 +13,9 @@ interface cardInDesk {
     easy: boolean
 }
 
-interface DeskArray {
+export interface DeskArray {
     id: number
-    name: string
+    name: string,
     tag: string | null
     description: string | null
     cardCount: number
@@ -29,3 +30,4 @@ export interface ICardsReducerIniState {
     desks: DeskArray[],
     customDesks: DeskArray[]
 }
+

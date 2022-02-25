@@ -10,6 +10,7 @@
     display: grid
     grid-template-columns: 1fr 1fr 1fr 1fr
     column-gap: 2vw
+    row-gap: 2vh
   &__basicWrapper
     &_title
       font-size: 2rem
@@ -28,16 +29,26 @@
   padding: 10px 20px
   &__toReview
     font-size: 20px
+    margin-right: 20px
   &__title
     font-size: 1.1em
     font-weight: 600
   &__description
     font-size: 18px
   &__edit
+    margin-left: 20px
     &:hover
       color: $mainAppGreen
       cursor: pointer
   &__delete
+    margin-left: 20px
     &:hover
       color: red
       cursor: pointer
+
+@media screen and (max-width: 425px)
+  .reviewWrapper
+    &__deskWrapper
+      display: grid
+      grid-template-columns: 100fr
+      row-gap: 2vh
