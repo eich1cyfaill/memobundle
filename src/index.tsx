@@ -11,7 +11,7 @@ import { store } from './Store/indexStore';
 if(localStorage.getItem('visited')){
     ReactDOM.render(
         <BrowserRouter>
-           <Provider store={store}><App /></Provider>,
+           <Provider store={store}><App /></Provider>
         </BrowserRouter>,
         document.getElementById('root')
     )

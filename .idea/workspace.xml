@@ -11,6 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2f9ad03-52d1-4ba2-8be5-f6c21f182900" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/EditDesk/EditDesk.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/EditDesk/NewCardModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Styles/EditDesk.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Styles/NewCardModal.module.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
@@ -20,11 +24,10 @@
       <change beforePath="$PROJECT_DIR$/src/Components/Review/Review.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Review/Review.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Store/ActionCreators/CardsReducerAC.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/ActionCreators/CardsReducerAC.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Store/Reducers/CardsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Reducers/CardsReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Styles/Desklist.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/Styles/Desklist.module.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Styles/Navside.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/Styles/Navside.module.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Styles/Review.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/Styles/Review.module.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Types/CardsReducerTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Types/CardsReducerTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +65,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="ts.external.directory.path" value="D:\PetPS\memobundle\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -83,7 +87,14 @@
       <workItem from="1645528415141" duration="15106000" />
       <workItem from="1645605445753" duration="7124000" />
       <workItem from="1645681684979" duration="2153000" />
-      <workItem from="1645768925624" duration="4965000" />
+      <workItem from="1645768925624" duration="7145000" />
+      <workItem from="1645883622852" duration="608000" />
+      <workItem from="1645977682601" duration="66000" />
+      <workItem from="1645977916940" duration="6472000" />
+      <workItem from="1646064791281" duration="5278000" />
+      <workItem from="1646137850850" duration="4868000" />
+      <workItem from="1646153559308" duration="15757000" />
+      <workItem from="1646219256251" duration="4030000" />
     </task>
     <servers />
   </component>
@@ -103,14 +114,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="671" y="307" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1645235754370">
+    <state x="560" y="220" width="800" height="600" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1645977955577">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="671" y="307" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1645235754370" />
+    <state x="560" y="220" width="800" height="600" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645977955577" />
+    <state x="671" y="307" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1646138566848">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="671" y="307" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1646138566848" />
     <state x="690" y="260" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1645236310389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="260" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1645236310389" />
+    <state x="461" y="158" key="SettingsEditor" timestamp="1645977984518">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="158" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1645977984518" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1645536819538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,0 +1,91 @@
+@import "./StyleAssets/variables.sass"
+
+
+.editDesk
+  &__wrapper
+    padding: 25px
+  &__title
+    font-size: 2.5rem
+    font-weight: 300
+    letter-spacing: 3px
+  &__desc
+    font-size: 1.5rem
+    font-weight: 300
+    letter-spacing: 1px
+    word-wrap: break-word
+  &__cardsInfo
+    display: flex
+    margin-top: 50px
+    font-size: 20px
+    justify-content: space-between
+    text-align: center
+    div
+      width: 100%
+  &__wordsInfo
+    display: flex
+    justify-content: space-between
+    text-align: center
+    margin-top: 50px
+    font-size: 20px
+    div
+      width: 100%
+
+
+  &__cards
+    &_title
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 25px
+      button
+        height: 20%
+        border: none
+        background: $mainAppGreen
+        padding: 5px 15px
+        color: $greenToWhite8
+    &_delete
+      &:hover
+        color: red
+        cursor: pointer
+    &_wrapper
+    &_item
+      display: grid
+      grid-template-columns: 5fr 20fr 65fr 5fr 5fr
+      &:nth-child(odd)
+        background: $greenToWhite7
+      &:nth-child(even)
+        background: $greenToWhite8
+
+
+@media screen and (max-width: 425px)
+  .editDesk
+    &__wrapper
+      display: grid
+      grid-template-columns: 100fr
+    &__desc
+      font-size: 1.2rem
+      font-weight: 300
+      max-width: 80vw
+    &__cardsInfo
+      font-size: 14px
+    &__wordsInfo
+      font-size: 14px
+    &__cards
+      &_title
+        display: flex
+        flex-direction: column
+        align-items: start
+        h2
+          font-weight: 300
+      &_item
+        width: 90vw
+        display: flex
+        word-wrap: break-word
+        flex-direction: column
+      &_index
+        display: none
+      &_delete
+        background: $mainAppGreen
+        color: $greenToWhite8
+        text-align: center
+

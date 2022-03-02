@@ -4,6 +4,7 @@ const initialState: ICardsReducerIniState = {
     desks: [{
         id: 0,
         cardCount: 0,
+        basic: true,
         description: 'Test DeskList',
         name: ' B Test DeskList Name',
         tag: 'test',
@@ -13,19 +14,39 @@ const initialState: ICardsReducerIniState = {
         toReview: 0,
         cards: [{
             id: 0,
+            deskId: 0,
             title: 'Test card Title',
             answer: 'Test card Answer',
-            known: false,
+            known: true,
             hard: false,
             easy: false,
-            normal: false}
+            normal: false},
+            {
+                id: 1,
+                deskId: 0,
+                title: 'Test card Title 222',
+                answer: 'Test card Answer 222',
+                known: true,
+                hard: true,
+                easy: false,
+                normal: false},
+            {
+                id: 2,
+                deskId: 0,
+                title: 'Test card Title 333',
+                answer: 'Test card Answer 333',
+                known: false,
+                hard: false,
+                easy: false,
+                normal: false}
             ]
         },
 
 
 
-            {id: 0,
+            {id: 1,
             cardCount: 0,
+                basic: true,
             description: 'Test DeskList 2',
             name: ' A Test DeskList Name 2',
             tag: 'test 2',
@@ -35,6 +56,7 @@ const initialState: ICardsReducerIniState = {
                 toReview: 0,
             cards: [{
                 id: 0,
+                deskId: 1,
                 title: 'Test Title 2',
                 answer: 'Test Answer 2',
                 known: false,
@@ -59,6 +81,33 @@ const cardsReducer = (state = initialState, action: any) => {
         case CardsReducerActionTypes.SET_NEW_DESK:
             localStorage.setItem('customDesks', JSON.stringify([...state.customDesks, action.payload]))
             return {...state, customDesks: [...state.customDesks, action.payload]}
+        case CardsReducerActionTypes.ADD_NEW_CARD:
+            let newCustomDesks = state.customDesks.map((desk) => {
+                if(desk.id == action.payload.deskId){
+                    desk.cards.push(action.payload)
+                    return desk
+                } else {
+                    return desk
+                }
+            })
+            localStorage.setItem('customDesks', JSON.stringify([...newCustomDesks]))
+            return {...state, customDesks: newCustomDesks}
+        case CardsReducerActionTypes.REMOVE_CARD_FROM_DESK:
+            let removedCardCustoms = state.customDesks.map(desk => {
+                if(desk.id == action.payload.deskId){
+                    desk.cards.forEach(card => {
+                        if(card.id == action.payload.cardId){
+                            let cardIndex = desk.cards.indexOf(card)
+                            desk.cards.splice(cardIndex, 1)
+                        }
+                    })
+                    return desk
+                } else {
+                    return desk
+                }
+            })
+            localStorage.setItem('customDesks', JSON.stringify([...removedCardCustoms]))
+            return {...state, customDesks: removedCardCustoms}
         default:
             return state
     }

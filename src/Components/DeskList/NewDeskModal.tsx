@@ -19,8 +19,8 @@ const NewDeskModal = (props: any) => {
     }
 
     return (
-        <div className={cl.modalBackground} onClick={props.toggleNewDeskModal}>
-            <div className={cl.contentWrapper} onClick={e => e.stopPropagation()}>
+        <div className={cl.modalBackground} onMouseDown={props.toggleNewDeskModal}>
+            <div className={cl.contentWrapper} onMouseDown={e => e.stopPropagation()}>
                 <div className={cl.contentWrapper__title}>→ create new desk</div>
                 <div className={cl.contentWrapper__input}><input ref={titleRef} type="text" placeholder="Type a new desk name"/></div>
                 <div className={cl.contentWrapper__textarea}><textarea ref={descRef} placeholder="Type a description"></textarea></div>

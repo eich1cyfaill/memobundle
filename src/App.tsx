@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Review from './Components/Review/Review';
 import Desklist from './Components/DeskList/Desklist';
 import {useActions} from "./Hooks/useActions";
+import EditDesk from "./Components/EditDesk/EditDesk";
 
 function App() {
     const {cardsReducerGetCustomDesksAC} = useActions()
@@ -19,6 +20,7 @@ function App() {
             <Routes>
               <Route path="review" element={<Review />}/>
               <Route path="desklist" element={<Desklist />}/>
+              <Route path="edit/:deskId" element={<EditDesk />}/>
             </Routes>
           </main>
         </div>
