@@ -3,15 +3,10 @@ import {CardsReducerActionTypes, ICardsReducerIniState} from "../../Types/CardsR
 const initialState: ICardsReducerIniState = {
     desks: [{
         id: 0,
-        cardCount: 0,
         basic: true,
         description: 'Test DeskList',
         name: ' B Test DeskList Name',
         tag: 'test',
-        wordsLearned: 0,
-        wordsLearning: 0,
-        wordsUnknown: 0,
-        toReview: 0,
         cards: [{
             id: 0,
             deskId: 0,
@@ -39,21 +34,18 @@ const initialState: ICardsReducerIniState = {
                 hard: false,
                 easy: false,
                 normal: false}
-            ]
+            ],
+
         },
 
 
 
             {id: 1,
-            cardCount: 0,
+
                 basic: true,
             description: 'Test DeskList 2',
             name: ' A Test DeskList Name 2',
             tag: 'test 2',
-            wordsLearned: 0,
-            wordsLearning: 0,
-            wordsUnknown: 0,
-                toReview: 0,
             cards: [{
                 id: 0,
                 deskId: 1,
@@ -108,6 +100,18 @@ const cardsReducer = (state = initialState, action: any) => {
             })
             localStorage.setItem('customDesks', JSON.stringify([...removedCardCustoms]))
             return {...state, customDesks: removedCardCustoms}
+        case CardsReducerActionTypes.REMOVE_DESK:
+            let customsArrayCopy = JSON.parse(JSON.stringify(state.customDesks))
+            let removedDeskCustoms = state.customDesks.map(desk => {
+                if(desk.id == action.payload.deskId){
+                    let deskIndex = customsArrayCopy.indexOf(desk)
+                    customsArrayCopy.splice(deskIndex, 1)
+                } else {
+                    return desk
+                }
+            })
+            localStorage.setItem('customDesks', JSON.stringify([...customsArrayCopy]))
+            return {...state, customDesks: customsArrayCopy}
         default:
             return state
     }

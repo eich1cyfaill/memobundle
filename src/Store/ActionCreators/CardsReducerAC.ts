@@ -1,7 +1,7 @@
 import {CardsReducerActionTypes, DeskArray} from "../../Types/CardsReducerTypes";
 
 export const cardsReducerSetNewDeskAC = (name: string="", description: string = "", tag: string = "") => {
-    return {type: CardsReducerActionTypes.SET_NEW_DESK, payload:  {name, description, tag, cardCount: 0, cards: [], id: Math.random().toString().split('.').join(''), toReview: 0,  wordsLearned: 0, wordsLearning: 0, wordsUnknown: 0}}
+    return {type: CardsReducerActionTypes.SET_NEW_DESK, payload:  {name, description, tag, cards: [], id: Math.random().toString().split('.').join('')}}
 }
 
 export const cardsReducerGetCustomDesksAC = () => {
@@ -14,4 +14,8 @@ export const cardsReducerAddNewCard = (deskId: number, title: string, answer: st
 
 export const cardsReducerRemoveCard = (cardId: number, deskId: number) => {
     return {type: CardsReducerActionTypes.REMOVE_CARD_FROM_DESK, payload: {cardId, deskId}}
+}
+
+export const cardsReducerRemoveDesk = (deskId: number) => {
+    return {type: CardsReducerActionTypes.REMOVE_DESK, payload: {deskId}}
 }

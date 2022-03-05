@@ -6,6 +6,7 @@ import Review from './Components/Review/Review';
 import Desklist from './Components/DeskList/Desklist';
 import {useActions} from "./Hooks/useActions";
 import EditDesk from "./Components/EditDesk/EditDesk";
+import ReviewScreen from "./Components/ReviewScreen/ReviewScreen";
 
 function App() {
     const {cardsReducerGetCustomDesksAC} = useActions()
@@ -20,7 +21,8 @@ function App() {
             <Routes>
               <Route path="review" element={<Review />}/>
               <Route path="desklist" element={<Desklist />}/>
-              <Route path="edit/:deskId" element={<EditDesk />}/>
+              <Route path="edit/:deckId" element={<EditDesk />}/>
+              <Route path="session/:deckId" element={<ReviewScreen/>}/>
             </Routes>
           </main>
         </div>

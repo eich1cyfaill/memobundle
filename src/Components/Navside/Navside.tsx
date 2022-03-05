@@ -61,7 +61,7 @@ const Navside = () => {
             <section style={navsideToggle ? {display: "block"} : {display: "none"}}>
                 <ul>
                     <Link to="review"><li onClick={toggleNavside}>review →</li></Link>
-                    <Link to="desklist"><li onClick={toggleNavside}>desk →</li></Link>
+                    <Link to="desklist"><li onClick={toggleNavside}>deсk →</li></Link>
                     <Link to="stats"><li onClick={toggleNavside}>stats →</li></Link>
                     <Link to="settings"><li onClick={toggleNavside}>settings →</li></Link>
                 </ul>

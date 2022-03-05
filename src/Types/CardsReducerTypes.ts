@@ -2,7 +2,8 @@ export enum CardsReducerActionTypes {
     SET_NEW_DESK = "SET_NEW_DESK",
     GET_CUSTOM_DESK = "GET_CUSTOM_DESK",
     ADD_NEW_CARD = "ADD_NEW_CARD",
-    REMOVE_CARD_FROM_DESK = "REMOVE_CARD_FROM_DESK"
+    REMOVE_CARD_FROM_DESK = "REMOVE_CARD_FROM_DESK",
+    REMOVE_DESK = "REMOVE_DESK"
 }
 
 export interface cardInDesk {
@@ -22,11 +23,6 @@ export interface DeskArray {
     name: string
     tag: string | null
     description: string | null
-    cardCount: number
-    wordsLearned: number
-    wordsLearning: number
-    wordsUnknown: number
-    toReview: number
     cards: cardInDesk[]
 }
 

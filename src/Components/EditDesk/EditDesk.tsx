@@ -12,7 +12,7 @@ const EditDesk = () => {
     const [selectedDesk, setSelectedDesk]: any = useState(null)
     const {desks, customDesks} = useTypedSelector(state => state.cardsReducer)
     const allDesks = [...desks, ...customDesks]
-    const {cardsReducerRemoveCard} = useActions()
+    const {cardsReducerRemoveCard, cardsReducerRemoveDesk} = useActions()
 
 
     const toggleNewCardModal = (basic: boolean) => {
@@ -26,9 +26,43 @@ const EditDesk = () => {
         cardsReducerRemoveCard(cardId, deskId)
     }
 
+    const throwDeskToDelete = (deckId: number) => {
+        cardsReducerRemoveDesk(deckId)
+    }
+
+    const countReviewCards = () => {
+        let returnedLength = []
+        selectedDesk.cards.forEach((el: any) => {
+            if(el.hard || el.normal){
+                returnedLength.push(el)
+            }
+        })
+        return returnedLength.length
+    }
+
+    const iterateInDeckUnknown = (method: string) => {
+        let returnedLength = []
+        selectedDesk.cards.forEach((el: any) => {
+            if(el[method] == false){
+                returnedLength.push(el)
+            }
+        })
+        return returnedLength.length
+    }
+
+    const iterateInDeck = (method: string) => {
+        let returnedLength = []
+        selectedDesk.cards.forEach((el: any) => {
+            if(el[method] == true){
+                returnedLength.push(el)
+            }
+        })
+        return returnedLength.length
+    }
+
     useEffect(() => {
         allDesks.forEach(el => {
-            if(el.id == params.deskId){
+            if(el.id == params.deckId){
                 setSelectedDesk(el)
             }
         })
@@ -40,14 +74,15 @@ const EditDesk = () => {
                 {modalVisibility ? <NewCardModal deskId={selectedDesk.id} toggleNewCardModal={toggleNewCardModal}/> : null}
                 <div className={cl.editDesk__title}>→ {selectedDesk ? selectedDesk.name : null}</div>
                 <div className={cl.editDesk__desc}>{selectedDesk ? selectedDesk.description : null}</div>
+                <button className={cl.editDesk__deskDelete} onClick={()=>throwDeskToDelete(selectedDesk.id)}>Delete Desk</button>
                 <div className={cl.editDesk__cardsInfo}>
                     <div>Cards Count: {selectedDesk ? selectedDesk.cards.length : null}</div>
-                    <div>Cards to review: {selectedDesk ? selectedDesk.toReview : null}</div>
+                    <div>Cards to review: {selectedDesk ? countReviewCards() : null}</div>
                 </div>
                 <div className={cl.editDesk__wordsInfo}>
-                    <div>Learned Words: {selectedDesk ? selectedDesk.wordsLearned : null}</div>
-                    <div>Words Learning: {selectedDesk ? selectedDesk.wordsLearning : null}</div>
-                    <div>Unknown Words: {selectedDesk ? selectedDesk.wordsUnknown : null}</div>
+                    <div>Learned Words: {selectedDesk ? iterateInDeck("easy") : null}</div>
+                    <div>Words Learning: {selectedDesk ? iterateInDeck("hard") : null}</div>
+                    <div>Unknown Words: {selectedDesk ? iterateInDeckUnknown("known") : null}</div>
                 </div>
 
                 <section className={cl.editDesk__cards}>

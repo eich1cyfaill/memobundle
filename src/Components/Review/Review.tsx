@@ -12,6 +12,9 @@ const Review = () => {
         await navigate(`/edit/${id}`)
     }
 
+    const throwDeckToReview = async(deckId: number) => {
+        await navigate(`/session/${deckId}`)
+    }
 
     return (
         <section className={cl.reviewWrapper}>
@@ -20,8 +23,8 @@ const Review = () => {
             <div className={cl.reviewWrapper__basicWrapper}>
                 <div className={cl.reviewWrapper__basicWrapper_title}>basic</div>
                 <div className={cl.reviewWrapper__deskWrapper}>
-                    {desks.map((desk) =>
-                        <div className={cl.desk} key={desk.name+desk.toReview+desk.id}>
+                    {desks.map((desk: any) =>
+                        <div className={cl.desk} key={desk.name+desk.toReview+desk.id} onClick={() => throwDeckToReview(desk.id)}>
                             <div className={cl.desk__toReview}>{desk.toReview}</div>
                             <div className={cl.desk__titleInfo}>
                                 <div className={cl.desk__title}>{desk.name.slice(0, 20)}</div>
@@ -38,8 +41,8 @@ const Review = () => {
             <div className={cl.reviewWrapper__basicWrapper}>
                 <div className={cl.reviewWrapper__basicWrapper_title}>custom</div>
                 <div className={cl.reviewWrapper__deskWrapper}>
-                    {customDesks.map((desk) =>
-                        <div className={cl.desk} key={desk.name+desk.toReview+desk.id}>
+                    {customDesks.map((desk: any) =>
+                        <div className={cl.desk} key={desk.name+desk.toReview+desk.id} onClick={() => throwDeckToReview(desk.id)}>
                             <div className={cl.desk__toReview}>{desk.toReview}</div>
                             <div className={cl.desk__titleInfo}>
                                 <div className={cl.desk__title}>{desk.name.slice(0, 20)}</div>
