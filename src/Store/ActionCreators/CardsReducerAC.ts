@@ -9,7 +9,7 @@ export const cardsReducerGetCustomDesksAC = () => {
 }
 
 export const cardsReducerAddNewCard = (deskId: number, title: string, answer: string,) => {
-    return {type: CardsReducerActionTypes.ADD_NEW_CARD, payload: {deskId, id: Math.random().toString().split('.').join(''), title, answer, known: false, hard: false, easy: false, normal: false}}
+    return {type: CardsReducerActionTypes.ADD_NEW_CARD, payload: {deskId, id: Math.random().toString().split('.').join(''), title, answer, known: false, hard: false, easy: false, normal: false, }}
 }
 
 export const cardsReducerRemoveCard = (cardId: number, deskId: number) => {
