@@ -165,16 +165,23 @@ const cardsReducer = (state = initialState, action: any) => {
             localStorage.setItem('customDesks', JSON.stringify([...removedCardCustoms]))
             return {...state, customDesks: removedCardCustoms}
         case CardsReducerActionTypes.REMOVE_DESK:
+            debugger
             let customsArrayCopy = JSON.parse(JSON.stringify(state.customDesks))
-            let removedDeskCustoms = state.customDesks.map(desk => {
+            debugger
+            let removedDeskCustoms = customsArrayCopy.map((desk: any) => {
                 if(desk.id == action.payload.deskId){
+                    debugger
                     let deskIndex = customsArrayCopy.indexOf(desk)
+                    debugger
                     customsArrayCopy.splice(deskIndex, 1)
+                    debugger
                 } else {
                     return desk
                 }
             })
+            debugger
             localStorage.setItem('customDesks', JSON.stringify([...customsArrayCopy]))
+            debugger
             return {...state, customDesks: customsArrayCopy}
         default:
             return state
