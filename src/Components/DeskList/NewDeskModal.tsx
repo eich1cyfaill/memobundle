@@ -12,10 +12,15 @@ const NewDeskModal = (props: any) => {
     const {cardsReducerSetNewDeskAC} = useActions()
 
     const createNewDesk = () => {
-        if(titleRef.current && descRef.current && tagRef.current){
+        if(titleRef.current?.value && descRef.current && tagRef.current){
             cardsReducerSetNewDeskAC(titleRef.current.value, descRef.current.value, tagRef.current.value)
+            props.toggleNewDeskModal()
+        } else {
+            if(!titleRef.current?.value && titleRef.current){
+                titleRef.current.placeholder = "This field is required"
+                titleRef.current.style.background = "#fbdfdf"
+            }
         }
-        props.toggleNewDeskModal()
     }
 
     return (

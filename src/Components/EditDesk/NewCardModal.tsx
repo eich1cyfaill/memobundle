@@ -9,10 +9,19 @@ const NewCardModal = (props: any) => {
     const {cardsReducerAddNewCard} = useActions()
 
     const addNewCard = () => {
-        if(wordRef.current && answerRef.current){
+        if(wordRef.current?.value && answerRef.current?.value){
             cardsReducerAddNewCard(props.deskId, wordRef.current.value, answerRef.current.value)
+            props.toggleNewCardModal()
+        } else {
+            if(!wordRef.current?.value && wordRef.current){
+                wordRef.current.placeholder = "This field is required"
+                wordRef.current.style.background = "#fbdfdf"
+            }
+            if(!answerRef.current?.value && answerRef.current){
+                answerRef.current.placeholder = "This field is required"
+                answerRef.current.style.background = "#fbdfdf"
+            }
         }
-        props.toggleNewCardModal()
     }
 
     return (

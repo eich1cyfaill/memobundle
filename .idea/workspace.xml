@@ -14,12 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2f9ad03-52d1-4ba2-8be5-f6c21f182900" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/EditDesk/DeleteConfirm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/DeleteConfirm.module.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/EditDesk/EditDesk.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/EditDesk/EditDesk.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/Reducers/CardsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/Reducers/CardsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/DeskList/NewDeskModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/DeskList/NewDeskModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/EditDesk/NewCardModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/EditDesk/NewCardModal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +102,7 @@
       <workItem from="1646571192736" duration="282000" />
       <workItem from="1646592301517" duration="595000" />
       <workItem from="1646650295632" duration="3444000" />
-      <workItem from="1646748567100" duration="3797000" />
+      <workItem from="1646748567100" duration="5634000" />
     </task>
     <servers />
   </component>
