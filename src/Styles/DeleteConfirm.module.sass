@@ -1,0 +1,48 @@
+@import "./StyleAssets/variables.sass"
+
+.deleteConfirm
+  background: rgba(0,0,0,0.3)
+  position: absolute
+  inset: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  &__wrapper
+    width: 30vw
+    height: 20vh
+    background: $greenToWhite8
+    border: 1px solid $mainAppGreen
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 15px
+    box-sizing: border-box
+    h2
+      font-weight: 400
+
+.wrapper
+  &__buttonsFamily
+    display: flex
+    justify-content: space-between
+    button
+      width: 49%
+      outline: none
+      border: none
+      background: $greenToWhite2
+      padding: 15px 0
+      font-size: 17px
+      color: $greenToWhite8
+      letter-spacing: 2px
+      &:hover
+        cursor: pointer
+        background: $appGreenGradation5
+
+@media screen and (max-width: 768px)
+  .deleteConfirm
+    &__wrapper
+      width: 50vw
+
+@media screen and (max-width: 425px)
+  .deleteConfirm
+    &__wrapper
+      width: 100vw

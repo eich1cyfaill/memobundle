@@ -1,15 +1,18 @@
 import React, {useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import {useTypedSelector} from "../../Hooks/useTypedSelector";
 import cl from '../../Styles/EditDesk.module.sass'
 import { cardInDesk } from '../../Types/CardsReducerTypes';
 import NewCardModal from "./NewCardModal";
 import {useActions} from "../../Hooks/useActions";
+import DeleteConfirm from "./DeleteConfirm";
 
 const EditDesk = () => {
     const params = useParams()
+    const navigate = useNavigate()
     const [modalVisibility, setModalVisibility] = useState(false)
     const [selectedDesk, setSelectedDesk]: any = useState(null)
+    const [deleteConfirm, setDeleteConfirm] = useState(false)
     const {desks, customDesks} = useTypedSelector(state => state.cardsReducer)
     const allDesks = [...desks, ...customDesks]
     const {cardsReducerRemoveCard, cardsReducerRemoveDesk} = useActions()
@@ -26,8 +29,9 @@ const EditDesk = () => {
         cardsReducerRemoveCard(cardId, deskId)
     }
 
-    const throwDeskToDelete = (deckId: number) => {
+    const throwDeskToDelete = async(deckId: number) => {
         cardsReducerRemoveDesk(deckId)
+        await navigate(`/desklist`)
     }
 
     const countReviewCards = () => {
@@ -72,9 +76,10 @@ const EditDesk = () => {
         return (
             <section className={cl.editDesk__wrapper}>
                 {modalVisibility ? <NewCardModal deskId={selectedDesk.id} toggleNewCardModal={toggleNewCardModal}/> : null}
+                {deleteConfirm ? <DeleteConfirm toggleModal={() => setDeleteConfirm(false)} throwDeckToDelete={throwDeskToDelete} id={selectedDesk.id}/> : null}
                 <div className={cl.editDesk__title}>→ {selectedDesk ? selectedDesk.name : null}</div>
                 <div className={cl.editDesk__desc}>{selectedDesk ? selectedDesk.description : null}</div>
-                <button className={cl.editDesk__deskDelete} onClick={()=>throwDeskToDelete(selectedDesk.id)}>Delete Desk</button>
+                <button className={cl.editDesk__deskDelete} onClick={()=>setDeleteConfirm(true)}>Delete Desk</button>
                 <div className={cl.editDesk__cardsInfo}>
                     <div>Cards Count: {selectedDesk ? selectedDesk.cards.length : null}</div>
                     <div>Cards to review: {selectedDesk ? countReviewCards() : null}</div>
