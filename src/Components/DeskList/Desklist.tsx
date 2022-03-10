@@ -23,7 +23,7 @@ const Desklist: React.FC = () => {
         <div className={cl.desklistWrapper}>
             {newDeskModal ? <NewDeskModal toggleNewDeskModal={toggleNewDeskModal} /> : null}
             <div className={cl.desklistWrapper__title}> → deсklist</div>
-            <div className={cl.desklistWrapper__createNewDesk} onClick={toggleNewDeskModal}>+ create new deсk</div>
+            <div className={cl.desklistWrapper__createNewDesk} onClick={toggleNewDeskModal}>+ create new deck</div>
             <div className={cl.desklistWrapper__allDeskWrapper}>
                 {allDesks.map(el =>
                     <div className={cl.desklistWrapper__item} key={el.name + el.id + el.toReview} onClick={() => throwToEditMode(el.id)}>

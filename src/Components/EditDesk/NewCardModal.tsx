@@ -18,7 +18,7 @@ const NewCardModal = (props: any) => {
                 wordRef.current.style.background = "#fbdfdf"
             }
             if(!answerRef.current?.value && answerRef.current){
-                answerRef.current.placeholder = "This field is required"
+                answerRef.current.placeholder = "YThis field is required"
                 answerRef.current.style.background = "#fbdfdf"
             }
         }
